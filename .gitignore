@@ -18,6 +18,7 @@ lib/
 lib64/
 parts/
 sdist/
+Scripts/
 var/
 wheels/
 share/python-wheels/
@@ -136,3 +137,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Other
+media/

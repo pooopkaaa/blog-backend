@@ -16,7 +16,6 @@
       </div>
     </section>
     <!--================Hero Banner end =================-->  
-
     <!--================ Blog slider start =================-->
     <section>
       <div class="container">
@@ -26,9 +25,9 @@
               <div class="card blog__slide text-center">
                 <div class="blog__slide__img">
                   {% if post.image_url %}
-                    <img class="card-img rounded-0" src="{{post.image_url}}" alt="">
+                    <img class="card-img rounded-0" src="{{post.image_url}}" alt="{{post.slug}}">
                   {% else %}
-                    <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="">
+                    <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="{{post.slug}}">
                   {% endif %}
                 </div>
                 <div class="blog__slide__content">
@@ -42,7 +41,6 @@
       </div>
     </section>
     <!--================ Blog slider end =================-->
-
     <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin mt-4">
       <div class="container">
@@ -52,14 +50,14 @@
               <div class="single-recent-blog-post">
                 <div class="thumb">
                   {% if post.image_url %}
-                    <img class="img-fluid" src="{{post.image_url}}" alt="">
+                    <img class="img-fluid" src="{{post.image_url}}" alt="{{post.slug}}">
                   {% else %}
-                    <img class="img-fluid" src="{% static './img/banner/blog.png' %}" alt="">
+                    <img class="img-fluid" src="{% static './img/banner/blog.png' %}" alt="{{post.slug}}">
                   {% endif %}
                   <ul class="thumb-info" style="max-width: 550px;">
                     <li><a href="#"><i class="ti-user"></i>{{post.author}}</a></li>
                     <li><a href="#"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>{{post.comments_amount}}</a></li>
+                    <li><a href="#"><i class="ti-themify-favicon"></i>{{post.comments_amount}} Comments</a></li>
                   </ul>
                 </div>
                 <div class="details mt-20">
@@ -69,35 +67,31 @@
                 </div>
               </div>
             {% endfor %}
-
-            
-
             <div class="row">
               <div class="col-lg-12">
-                  <nav class="blog-pagination justify-content-center d-flex">
-                      <ul class="pagination">
-                          <li class="page-item">
-                              <a href="#" class="page-link" aria-label="Previous">
-                                  <span aria-hidden="true">
-                                      <i class="ti-angle-left"></i>
-                                  </span>
-                              </a>
-                          </li>
-                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                          <li class="page-item"><a href="#" class="page-link">2</a></li>
-                          <li class="page-item">
-                              <a href="#" class="page-link" aria-label="Next">
-                                  <span aria-hidden="true">
-                                      <i class="ti-angle-right"></i>
-                                  </span>
-                              </a>
-                          </li>
-                      </ul>
-                  </nav>
+                <nav class="blog-pagination justify-content-center d-flex">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a href="#" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">
+                          <i class="ti-angle-left"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item">
+                      <a href="#" class="page-link" aria-label="Next">
+                        <span aria-hidden="true">
+                          <i class="ti-angle-right"></i>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
-
           <!-- Start Blog Post Siddebar -->
           <div class="col-lg-4 sidebar-widgets">
             <div class="widget-wrap">
@@ -111,8 +105,6 @@
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
               </div>
-
-
               <div class="single-sidebar-widget post-category-widget">
                 <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
               </div>
